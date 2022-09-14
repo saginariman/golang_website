@@ -1,0 +1,32 @@
+{{define "index"}}
+
+{{ template "header" }}
+    
+<main class="px-3">
+    <h1>Главная страница</h1>
+    <p class="lead">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Quae enim laboriosam excepturi vero laborum assumenda dignissimos 
+        dicta perspiciatis voluptatem culpa, dolorum reprehenderit! 
+        Dolores quas consequatur pariatur repellat. Amet, blanditiis nulla? 
+        Quisquam harum iste incidunt minima suscipit quibusdam expedita optio, 
+        impedit, odio vitae labore. Accusantium aliquam nobis harum quibusdam 
+        voluptatum atque.
+    </p>
+    {{range .}}
+        <div class="alert alert-danger">
+            <h2>{{.Title}}</h2>
+            <p>{{.Anons}}</p>
+            <a href="/post/{{ .Id }}" class="btn btn-danger">Читать далее...</a>
+        </div>
+    {{else}}
+    <p class="lead">Нету ничегооооооооо</p>
+    {{end}}
+    <p class="lead">
+        <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-dark">Узнать больше</a>
+    </p>
+</main>
+{{ template "footer" }}
+{{ end }}
+    
+      
